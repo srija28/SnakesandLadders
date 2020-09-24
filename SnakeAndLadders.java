@@ -13,30 +13,40 @@ public class SnakeAndLadders {
 		
 		int currentPosition = INITIAL_POSITION;
 		int move = 0;
+		int count = 0;
 		
 		while(currentPosition != 100) {
-			int dice = ((int) Math.floor(Math.random()*10)%6)+1;
-			//System.out.println("Player rolls the number:"+dice);
-			int check = (int) Math.floor(Math.random()*10)%3;
-			//System.out.println("check is " + check);
 			
+			int dice = ((int) Math.floor(Math.random()*10)%6)+1;
+				count+=1;
+				
+			
+				
+				//System.out.println("Player rolls the number:"+dice);
+			int check = (int) Math.floor(Math.random()*10)%3;
+				//System.out.println("check is " + check);
+				
 			if(check == NO_PLAY)
 				currentPosition = currentPosition;
+				
 			else if(check == LADDER) {
 				currentPosition += dice;
 				if(currentPosition>100)
-					currentPosition-=dice;
+						currentPosition-=dice;
 			}
-				
+					
 			else {
 				currentPosition -= dice;
 				if(currentPosition<INITIAL_POSITION)
 					currentPosition = INITIAL_POSITION;
-			
+				
 				}
-			move+=1;
+			move+=1;	
+			System.out.println("The position after every dice roll " + currentPosition);
+			
 		}
 		System.out.println("The player reaches exactly 100 in "+ move +" moves");
+		System.out.println("The no of time the dice has been rolled :" + count);
 			
 	}	
 }
