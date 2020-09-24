@@ -14,7 +14,7 @@ public class SnakeAndLadders {
 		int currentPosition = INITIAL_POSITION;
 		int move = 0;
 		
-		while(currentPosition<100) {
+		while(currentPosition != 100) {
 			int dice = ((int) Math.floor(Math.random()*10)%6)+1;
 			//System.out.println("Player rolls the number:"+dice);
 			int check = (int) Math.floor(Math.random()*10)%3;
@@ -22,8 +22,12 @@ public class SnakeAndLadders {
 			
 			if(check == NO_PLAY)
 				currentPosition = currentPosition;
-			else if(check == LADDER)
+			else if(check == LADDER) {
 				currentPosition += dice;
+				if(currentPosition>100)
+					currentPosition-=dice;
+			}
+				
 			else {
 				currentPosition -= dice;
 				if(currentPosition<INITIAL_POSITION)
@@ -32,7 +36,7 @@ public class SnakeAndLadders {
 				}
 			move+=1;
 		}
-		System.out.println("The player reaches 100 in "+ move +"moves");
+		System.out.println("The player reaches exactly 100 in "+ move +" moves");
 			
 	}	
 }
