@@ -2,7 +2,7 @@ package SnakeAndLadders;
 
 public class SnakeAndLadders {
 	public static final int INITIAL_POSITION =0;
-	public static final int NO_OF_PLAYERS =1;
+	public static final int NO_OF_PLAYERS =2;
 	public static final int NO_PLAY =0;
 	public static final int LADDER = 1;
 	public static final int SNAKE = 2;
@@ -19,8 +19,6 @@ public class SnakeAndLadders {
 			
 			int dice = ((int) Math.floor(Math.random()*10)%6)+1;
 				count+=1;
-				
-			
 				
 				//System.out.println("Player rolls the number:"+dice);
 			int check = (int) Math.floor(Math.random()*10)%3;
@@ -50,3 +48,8 @@ public class SnakeAndLadders {
 			
 	}	
 }
+
+
+
+
+
