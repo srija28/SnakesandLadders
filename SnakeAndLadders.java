@@ -59,6 +59,7 @@ public class SnakeAndLadders {
 			}
 		}
 		System.out.println("The Final Position of player 1 :" + PLAYER1_POSITION);
+		
 		System.out.println("The Final Position of player 2 :" + PLAYER2_POSITION);
 		if (PLAYER1_POSITION == 100) {
 			System.out.println("Player 1 won and his dice roll count is :" + PLAYER1_DICE);
